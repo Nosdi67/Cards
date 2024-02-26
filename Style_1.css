@@ -8,13 +8,12 @@
 
 #container{
     display: flex;
-    flex-direction:row;
+    flex-wrap: wrap;
     align-items: center;
-    align-content: center;
-    justify-content: space-around;
+    justify-content: center;
     background-color:rgba(68, 117, 136, 0.548);
     min-height: 100vh;
-    min-width: 100vh;
+    gap: 20px;
 }
 
 .Card{
@@ -22,18 +21,37 @@
     border: solid white 0px;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    padding: 10px;
     width: 300px;
+    overflow: hidden;
+}
+.Card:hover{
+    transform: translateY(-10px);
+    transition: 0.5s;
+    
 }
 
 .card_header{
     height: 200px;
-    width: 200px;
-    border-radius:10px ;
+    border-radius:10px 10px 0px 0px ;
+    position: relative;
+    overflow: hidden;
 }
 .card_header img{
-    height: 100px;
-    width: 100px;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    filter: grayscale(1);
+    transition: 0.5s;
+    
+
+}
+
+.Card:hover .card_header img{
+    transform: scale(1.1);
+    filter:grayscale(0);
+}
+.text{
+    padding: 30px;
 }
 
 article{
@@ -43,8 +61,34 @@ article{
 article h1{
     font-size:25px ;
     margin-bottom: 10px;
+    font-weight: 700;
+    padding-bottom: 10px;
 }
 
 article p{
     font-size: 14px;
+    color: rgba(127, 137, 142, 0.548);;
+    font-weight: 300;
 }
+.coeur{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:#fff;
+    width: 50px;
+    height: 50px;
+    background-color: rgb(237, 53, 96);
+    position: absolute;
+    top: 0;
+    left: -50px;
+    font-size: 20px;
+    transition: 0.5s;
+}
+
+.Card:hover .coeur{
+    left: 0;
+}
+a{
+    color: white;
+}
+
